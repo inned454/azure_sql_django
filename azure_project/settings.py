@@ -75,25 +75,29 @@ WSGI_APPLICATION = 'azure_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'mssql',
-#         'NAME': 'bearlab-db',
-#         'USER': 'bearlab-admin',
-#         'PASSWORD': '@dmin1234567',
-#         'HOST': 'bearlab-server.database.windows.net',
-#         'PORT': '1433',
-#         'OPTIONS': {
-#             'driver': 'ODBC Driver 18 for SQL Server',
-#         },
-#     },
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
 # }
+
+# Server=tcp:inn-sql-server.database.windows.net,1433;Initial Catalog=free-sql-db-5376513;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication="Active Directory Default";
+
+
+DATABASES = {
+     'default': {
+         'ENGINE': 'mssql',
+         'NAME': 'free-sql-db-5376513',
+         'USER': 'inn-admin',
+         'PASSWORD': 'Iones454',
+         'HOST': 'inn-sql-server.database.windows.net',
+         'PORT': '1433',
+         'OPTIONS': {
+             'driver': 'ODBC Driver 18 for SQL Server',
+         },
+     },
+ }
 
 
 # Password validation
